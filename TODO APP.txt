@@ -1,0 +1,52 @@
+TODO APP
+---------
+
+tasks=[]
+
+def addTask(tasks):
+  task=input("Enter a task")
+  tasks.append(task)
+  print("Task added successfully")
+
+def viewTask(tasks):
+  if len(tasks)==0:
+    print("No tasks found")
+  else:
+    print("Tasks:")
+    for index, tasks in enumerate(tasks, start=1):
+      print(f"{index}. {tasks}")
+
+def delTask(tasks):
+  if len(tasks)==0:
+    print("No tasks found")
+  else:
+    viewTask(tasks)
+    n=int(input("Enter the no of tasks to be deleted:"))
+    if n>0 and n<=len(tasks):
+      del tasks[n-1]
+      print("Task deleted successfully")
+
+
+if __name__=="__main__":
+  print("Welcome to todo app")
+  while True:
+    print("Choose the option")
+    print("1. Add task")
+    print("2. View task")
+    print("3. Delete task")
+    print("4. Exit")
+
+    choice=int(input("Enter your choice:"))
+    if(choice==1):
+      addTask(tasks)
+    elif(choice==2):
+      viewTask(tasks)
+    elif(choice==3):
+      delTask(tasks)
+    elif(choice==4):
+      print("Thank you for using todo app")
+      break
+    else:
+      print("Invalid choice")
+
+print("Goodbye")
